@@ -14,10 +14,10 @@ jobs:
 
       - name: Set up SSH
         run: |
-          sudo mkdir -p /home/runner/.ssh/
-          sudo echo "${{ secrets.SSH_PRIVATE_KEY }}" > /home/runner/.ssh/id_rsa
-          sudo chmod 600 /home/runner/.ssh/id_rsa
-          sudo ssh-keyscan ec2-54-144-79-207.compute-1.amazonaws.com >> /home/runner/.ssh/known_hosts
+          sudo mkdir -p ~/.ssh/
+          sudo echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          sudo chmod 400 /home/runner/.ssh/id_rsa
+          sudo ssh-keyscan ec2-54-144-79-207.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH into remote machine
         run: ssh ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com

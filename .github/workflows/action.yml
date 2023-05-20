@@ -3,24 +3,19 @@ name: SSH Action
 on:
   push:
     branches:
-      - master
       - main
 
 jobs:
-
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set SSH
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan hostname >> ~/.ssh/known_hosts
 
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{secrets.SSH_KEY}}
-
-      - name: SSH conection
-
-        run: ssh ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com
-
-
-
+      - name: SSH into remote machine
+        run: ssh username@hostname

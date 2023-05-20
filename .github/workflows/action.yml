@@ -15,8 +15,9 @@ jobs:
       - name: Set up SSH
         run: |
           sudo mkdir -p ~/.ssh/
+          sudo chmod 777 ~/.ssh
           sudo echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          sudo chmod 700 /home/runner/.ssh/id_rsa
+          sudo chmod 700 ~/.ssh/id_rsa
           sudo ssh-keyscan ec2-54-144-79-207.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH into remote machine

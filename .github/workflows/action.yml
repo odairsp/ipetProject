@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set SSH  
+      - name: Set SSH
 
         uses: webfactory/ssh-agent@v0.5.0
         with:
@@ -20,7 +20,7 @@ jobs:
 
       - name: SSH conection
 
-        run: ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}
+        run: ssh ec2-54-144-79-207.compute-1.amazonaws.com
 
 
 

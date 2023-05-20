@@ -1,0 +1,26 @@
+name: SSH Action
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set SSH
+
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{secrets.SSH_KEY}}
+
+      - name: SSH conection
+
+        run: ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}
+
+
+

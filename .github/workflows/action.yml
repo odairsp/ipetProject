@@ -17,7 +17,7 @@ jobs:
           mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ec2-54-144-79-207.compute-1.amazonaws.com >> ~/.ssh/known_hosts
+          ssh-keyscan ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH into remote machine
         run: ssh ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com

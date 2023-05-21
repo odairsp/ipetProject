@@ -18,7 +18,7 @@ jobs:
           sudo chmod 777 ~/.ssh
           sudo echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           sudo chmod 700 ~/.ssh/id_rsa
-          sudo ssh-keyscan admin@ec2-174-129-173-197.compute-1.amazonaws.com >> ~/.ssh/known_hosts
+          sudo ssh-keyscan ec2-174-129-173-197.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH into remote machine
         run: |

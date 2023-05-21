@@ -21,8 +21,7 @@ jobs:
           sudo ssh-keyscan ec2-174-129-173-197.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH conect machine
-        run: ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com
+        run: ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com  cat /home/admin/logPull.txt
 
-      - name: SSH machine remote
-        run: |
-          cd /var/www/ipetProject
+
+

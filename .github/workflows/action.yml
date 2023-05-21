@@ -20,7 +20,9 @@ jobs:
           sudo chmod 700 ~/.ssh/id_rsa
           sudo ssh-keyscan ec2-174-129-173-197.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
-      - name: SSH into remote machine
+      - name: SSH conect machine
+        run: ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com
+
+      - name: SSH machine remote
         run: |
-          ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com
-          sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt && date >> /home/admin/logPull.txt
+          cd /var/www/ipetProject

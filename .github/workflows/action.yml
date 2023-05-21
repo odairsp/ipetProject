@@ -18,9 +18,18 @@ jobs:
           sudo chmod 777 ~/.ssh
           sudo echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           sudo chmod 700 ~/.ssh/id_rsa
-          sudo ssh-keyscan ec2-54-144-79-207.compute-1.amazonaws.com >> ~/.ssh/known_hosts
+          sudo ssh-keyscan admin@ec2-174-129-173-197.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH into remote machine
         run: |
           ssh ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com
-          ls /var/
+          sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
+          date >> /home/admin/logPull.txt
+          cd /var/www/ipetProject
+          sudo git pull origin >> /home/admin/logPull.txt
+          sudo chown -R www-data:www-data /var/www/ipetProject
+          sudo php artisan optimize && echo "finalizado" >> /home/admin/logPull.txt
+
+
+
+

@@ -21,4 +21,6 @@ jobs:
           sudo ssh-keyscan ec2-54-144-79-207.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: SSH into remote machine
-        run: ssh ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com
+        run: |
+          ssh ubuntu@ec2-54-144-79-207.compute-1.amazonaws.com
+          ls /var/

@@ -24,9 +24,3 @@ jobs:
         run: |
           ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com
           sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt && date >> /home/admin/logPull.txt
-          cd /var/www/ipetProject && sudo git pull origin >> /home/admin/logPull.txt
-          sudo chown -R www-data:www-data /var/www/ipetProject && sudo php artisan optimize && echo "finalizado" >> /home/admin/logPull.txt
-
-
-
-

@@ -22,7 +22,7 @@ jobs:
 
       - name: SSH into remote machine
         run: |
-          ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com
+          
           sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
           date >> /home/admin/logPull.txt
           cd /var/www/ipetProject

@@ -22,7 +22,7 @@ jobs:
 
       - name: SSH conect machine
         run: |
-          ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com  cd /var/www/ipetProject
+          ssh admin@ec2-174-129-173-197.compute-1.amazonaws.com  cd /var/www/ipetProject &&
           sudo pwd >> /home/admin/logPull.txt
 
 

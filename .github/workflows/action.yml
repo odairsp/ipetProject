@@ -28,8 +28,8 @@ jobs:
           echo "Iniciando Pull..." >> /home/admin/logPull.txt
           date >> /home/admin/logPull.txt
           git pull origin >> /home/admin/logPull.txt
-          chown -R www-data:www-data /var/www/ipetProject
-          php artisan optimize
+          sudo chown -R www-data:www-data /var/www/ipetProject
+          sudo php artisan optimize
           echo "finalizado" >> /home/admin/logPull.txt
           EOF
 

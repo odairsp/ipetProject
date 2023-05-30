@@ -29,7 +29,7 @@ jobs:
           ls -la
 
 
-          echo "Iniciando Pull ....." >> /home/admin/logPull.txt
+          sudo echo "Iniciando Pull ....." >> /home/admin/logPull.txt
           # sudo git pull origin
           # echo "Adicionando permissões.................................."
           # sudo chown -R www-data:www-data /var/www/ipetProject

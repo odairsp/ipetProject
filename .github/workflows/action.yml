@@ -22,8 +22,7 @@ jobs:
 
       - name: SSH conect machine
         run: |
-          ssh admin@${{secrets.SSH_HOST}}  'bash -s' << EOF
-          #!/bin/bash
+          ssh admin@${{secrets.SSH_HOST}}
           sudo cd /var/www/ipetProject
           sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
           sudo date >> /home/admin/logPull.txt
@@ -31,6 +30,6 @@ jobs:
           sudo chown -R www-data:www-data /var/www/ipetProject
           sudo php artisan optimize
           sudo echo "finalizado" >> /home/admin/logPull.txt
-          EOF
+
 
 

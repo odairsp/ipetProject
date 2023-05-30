@@ -22,9 +22,9 @@ jobs:
 
       - name: SSH conect machine
         run: |
-          ssh admin@${{secrets.SSH_HOST}} 'bash -s' << EOF
-          cd /var/www/ipetProject
-          echo "Iniciando Pull..." >> /home/admin/logPull.txt
+          ssh admin@${{secrets.SSH_HOST}} 
+          shell: cd /var/www/ipetProject
+          shell: echo "Iniciando Pull..." >> /home/admin/logPull.txt
           date >> /home/admin/logPull.txt
           git pull origin >> /home/admin/logPull.txt
           chown -R www-data:www-data /var/www/ipetProject

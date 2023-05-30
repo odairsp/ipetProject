@@ -23,9 +23,10 @@ jobs:
       - name: SSH conect machine
         run: |
           ssh admin@${{secrets.SSH_HOST}}
+          admin
+          cd /var/www/ipetProject
       - name: SSH Comands
         run: |
-          'bash -s' cd /var/www/ipetProject
           sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
           sudo date >> /home/admin/logPull.txt
           sudo git pull origin >> /home/admin/logPull.txt

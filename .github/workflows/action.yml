@@ -24,12 +24,13 @@ jobs:
         run: |
           ssh admin@${{secrets.SSH_HOST}} 'bash' <<EOF
           #!/bin/bash
+          pwd
           whoami
+          sudo su 
+          echo "Iniciando Pull ....." >> /home/admin/logPull.txt
           cd /var/www/ipetProject
           ls -la
-
-
-          sudo echo "Iniciando Pull ....." >> /home/admin/logPull.txt
+          
           # sudo git pull origin
           # echo "Adicionando permissões.................................."
           # sudo chown -R www-data:www-data /var/www/ipetProject

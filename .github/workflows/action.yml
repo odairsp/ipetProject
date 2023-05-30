@@ -23,7 +23,7 @@ jobs:
       - name: SSH conect machine
         run: |
           ssh admin@${{secrets.SSH_HOST}}  'bash -s' << EOF
-          
+          #!/bin/bash
           sudo cd /var/www/ipetProject
           sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
           sudo date >> /home/admin/logPull.txt

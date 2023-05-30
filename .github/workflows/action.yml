@@ -25,12 +25,12 @@ jobs:
           ssh admin@${{secrets.SSH_HOST}} 'bash' <<EOF
           #!/bin/bash
           cd /var/www/ipetProject
-          sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
-          sudo date >> /home/admin/logPull.txt
-          sudo git pull origin >> /home/admin/logPull.txt
+          sudo echo "Iniciando Pull..."
+          
+          sudo git pull origin
           sudo chown -R www-data:www-data /var/www/ipetProject
           sudo php artisan optimize
-          sudo echo "finalizado" >> /home/admin/logPull.txt
+          sudo echo "finalizado"
           EOF
 
 

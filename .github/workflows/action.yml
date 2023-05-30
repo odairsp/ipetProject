@@ -24,6 +24,7 @@ jobs:
         run: |
           ssh admin@${{secrets.SSH_HOST}} 'bash' <<EOF
           #!/bin/bash
+          whoami
           cd /var/www/ipetProject
           ls -la
 

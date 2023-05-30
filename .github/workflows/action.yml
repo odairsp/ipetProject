@@ -24,20 +24,14 @@ jobs:
         run: |
           ssh admin@${{secrets.SSH_HOST}} 'bash' <<EOF
           #!/bin/bash
-          pwd
-          whoami
           sudo su 
-          echo "Iniciando Pull ....." >> /home/admin/logPull.txt
+          echo "Iniciando Pull ..." >> /home/admin/logPull.txt
           cd /var/www/ipetProject
-          ls -la
-          
-          # sudo git pull origin
-          # echo "Adicionando permissões.................................."
-          # sudo chown -R www-data:www-data /var/www/ipetProject
-          # echo "Artisan................................................."
-          # sudo php artisan optimize
-          # echo "finalizado.............................................."
-
+          date >> /home/admin/logPull.txt
+          git pull origin >> /home/admin/logPull.txt
+          chown -R www-data:www-data /var/www/ipetProject
+          php artisan optimize
+          echo "Finalizado ..." >> /home/admin/logPull.txt
           EOF
 
 

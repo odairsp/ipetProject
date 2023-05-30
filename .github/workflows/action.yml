@@ -23,13 +23,13 @@ jobs:
       - name: SSH conect machine
         run: |
           ssh admin@${{secrets.SSH_HOST}}
-          sudo cd /var/www/ipetProject
-          sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
-          sudo date >> /home/admin/logPull.txt
-          sudo git pull origin >> /home/admin/logPull.txt
-          sudo chown -R www-data:www-data /var/www/ipetProject
-          sudo php artisan optimize
-          sudo echo "finalizado" >> /home/admin/logPull.txt
+          bash sudo cd /var/www/ipetProject
+          bash sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
+          bash sudo date >> /home/admin/logPull.txt
+          bash sudo git pull origin >> /home/admin/logPull.txt
+          bash sudo chown -R www-data:www-data /var/www/ipetProject
+          bash sudo php artisan optimize
+          bash sudo echo "finalizado" >> /home/admin/logPull.txt
 
 
 

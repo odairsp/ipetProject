@@ -25,7 +25,7 @@ jobs:
           ssh admin@${{secrets.SSH_HOST}}
       - name: SSH Comands
         run: |
-          bash cd /var/www/ipetProject
+          'bash -s' cd /var/www/ipetProject
           sudo echo "Iniciando Pull..." >> /home/admin/logPull.txt
           sudo date >> /home/admin/logPull.txt
           sudo git pull origin >> /home/admin/logPull.txt

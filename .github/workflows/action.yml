@@ -24,7 +24,8 @@ jobs:
         run: |
           ssh admin@${{secrets.SSH_HOST}} 'bash' <<EOF
           #!/bin/bash
-          ls -la /var/www/ipetProject
+          cd /var/www/ipetProject
+          ls -la
 
 
           #  echo "Iniciando Pull........................................."
